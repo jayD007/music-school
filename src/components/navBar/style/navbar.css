@@ -1,0 +1,9 @@
+.border{
+    border-radius: 45px;
+    border: 1px solid #B0960A;
+}
+
+.navbar-center {
+    width: 50% !important;
+    margin: 0 auto;
+}
