@@ -30,6 +30,11 @@ const HeroImageBox = styled(Box)(({ theme }) => ({
     backgroundPosition: 'top',
     maxWidth: '1200px',
   },
+  '@media (height:390px)': {
+    height: '100vh',
+    width:'85%',
+    left:'10%',
+  },
 }));
 const HeroTextBox = styled(Box)(({ theme }) => ({
   textAlign: 'left',
@@ -39,23 +44,46 @@ const HeroTextBox = styled(Box)(({ theme }) => ({
   transform: 'translateY(-50%)',
   color: 'white',
   fontsize: '1.5rem',
-  '@media (min-width:984px)': {
+  '@media (min-width:984px) ': {
     top: '70%',
   },
   '@media (max-width:950px)': {
     top: '90%',
   },
+
 }));
 
-const HeroImage = () => {
+export const Hero = () => {
   return (
     <HeroImageBox>
       <HeroTextBox>
-        <Typography variant="h2">Frank Mellise</Typography>
-        <Typography variant="body1">Muziekschool Heesch</Typography>
+        <Typography
+          variant="h2"
+          sx={{
+            fontSize: {
+              xs: '2.5rem', // for small screens
+              sm: '2rem', // for medium screens
+              md: '2.5rem', // for large screens
+              lg: '3rem', // for extra large screens
+            }
+          }}
+        >
+          Frank Melisse
+        </Typography>
+        <Typography
+          variant="body1"
+          sx={{
+            fontSize: {
+              xs: '0.90rem', // for small screens
+              sm: '0.875rem', // for medium screens
+              md: '1rem', // for large screens
+              lg: '1.125rem', // for extra large screens
+            }
+          }}
+        >
+          Muziekschool Heesch
+        </Typography>
       </HeroTextBox>
     </HeroImageBox>
   );
 };
-
-export default HeroImage;

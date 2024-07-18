@@ -5,15 +5,15 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import './App.css';
-
-import NavBar from './components/navBar/NavBar';
-import Hero from './components/hero/Hero';
+import { Hero, NavBar} from './components';
+import { Router } from './routes';
 
 function App() {
   return (
     <Container maxWidth="lg">
       <Hero />
       <NavBar />
+      <Router/>
     </Container>
   );
 }
