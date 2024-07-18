@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfrank=self.webpackChunkfrank||[]).push([[258],{2258:(e,s,n)=>{n.r(s),n.d(s,{default:()=>h});n(5043);var a=n(579);const h=e=>(0,a.jsx)("div",{children:(0,a.jsx)("h1",{style:{color:"white",fontSize:"50px"},children:"This is an About page"})})}}]);
+//# sourceMappingURL=258.9dfe2711.chunk.js.map
