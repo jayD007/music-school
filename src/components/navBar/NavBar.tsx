@@ -15,10 +15,7 @@ import './style/navbar.css';
 import { useNavigate } from 'react-router-dom';
 import { pages } from './constants/pages';
 
-
-
-
-export const NavBar=()=> {
+export const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null,
   );
@@ -29,16 +26,13 @@ export const NavBar=()=> {
     setAnchorElNav(event.currentTarget);
   };
   const handleMenuItemClick = (route: string) => {
-    console.log('route', route);
-    handleCloseNavMenu(); // Close the menu
-    navigate(route); // Navigate to the route
+    handleCloseNavMenu();
+    navigate(route);
   };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
-
 
   return (
     <AppBar
@@ -53,6 +47,7 @@ export const NavBar=()=> {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+
           <Typography
             variant="h6"
             noWrap
@@ -106,8 +101,11 @@ export const NavBar=()=> {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page.title} onClick={() => handleMenuItemClick(page.route)}>
-                  <Typography textAlign="center" >{page.title}</Typography>
+                <MenuItem
+                  key={page.title}
+                  onClick={() => handleMenuItemClick(page.route)}
+                >
+                  <Typography textAlign="center">{page.title}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -141,16 +139,15 @@ export const NavBar=()=> {
             {pages.map((page) => (
               <Button
                 key={page.title}
-                onClick={()=>handleMenuItemClick(page.route)}
+                onClick={() => handleMenuItemClick(page.route)}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page.title}
               </Button>
             ))}
           </Box>
-
         </Toolbar>
       </Container>
     </AppBar>
   );
-}
+};

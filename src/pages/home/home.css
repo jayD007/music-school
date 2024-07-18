@@ -1,0 +1,24 @@
+@media (min-width: 768px) {
+    .header {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .header {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .header {
+        font-size: 3rem;
+    }
+}
+
+
+.header {
+    font-size: 2.95rem;
+    color: #5d080f;
+    text-align: center;
+}
