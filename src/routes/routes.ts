@@ -1,4 +1,6 @@
+const baseUrl = '/music-school/';
+
 export const routes = {
-  home: '/',
-  about: '/about',
+  home: baseUrl,
+  about: `${baseUrl}about`,
 }

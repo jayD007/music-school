@@ -1,4 +1,4 @@
-// src/pages/about/About.tsx
+
 import React from 'react';
 
 interface Props {}

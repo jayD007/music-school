@@ -13,7 +13,7 @@ function App() {
     <Container maxWidth="lg">
       <Hero />
       <NavBar />
-      <Router/>
+      <Router />
     </Container>
   );
 }
