@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfrank=self.webpackChunkfrank||[]).push([[631],{9631:(e,n,s)=>{s.r(n),s.d(n,{default:()=>r});s(5043);var a=s(579);const r=e=>(0,a.jsx)("div",{children:(0,a.jsx)("h1",{className:"header",children:"Muziek maken geeft voldoening, verbindt mensen."})})}}]);
+//# sourceMappingURL=631.340f400d.chunk.js.map

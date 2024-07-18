@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/music-school/static/css/main.0250bdd3.css",
-    "main.js": "/music-school/static/js/main.c1bbb4a2.js",
-    "static/js/2.abc30d44.chunk.js": "/music-school/static/js/2.abc30d44.chunk.js",
+    "main.css": "/music-school/static/css/main.5ded4673.css",
+    "main.js": "/music-school/static/js/main.f8047fda.js",
+    "static/css/631.cc09a792.chunk.css": "/music-school/static/css/631.cc09a792.chunk.css",
+    "static/js/631.340f400d.chunk.js": "/music-school/static/js/631.340f400d.chunk.js",
     "static/js/258.9dfe2711.chunk.js": "/music-school/static/js/258.9dfe2711.chunk.js",
     "static/js/453.08434b89.chunk.js": "/music-school/static/js/453.08434b89.chunk.js",
     "static/media/heroImage.jpg": "/music-school/static/media/heroImage.89b54363735efc04d211.jpg",
@@ -63,14 +64,15 @@
     "static/media/roboto-greek-ext-400-normal.woff": "/music-school/static/media/roboto-greek-ext-400-normal.f708607d2a7290fb8bfa.woff",
     "static/media/roboto-greek-ext-700-normal.woff": "/music-school/static/media/roboto-greek-ext-700-normal.249853776d22a271b2b5.woff",
     "index.html": "/music-school/index.html",
-    "main.0250bdd3.css.map": "/music-school/static/css/main.0250bdd3.css.map",
-    "main.c1bbb4a2.js.map": "/music-school/static/js/main.c1bbb4a2.js.map",
-    "2.abc30d44.chunk.js.map": "/music-school/static/js/2.abc30d44.chunk.js.map",
+    "main.5ded4673.css.map": "/music-school/static/css/main.5ded4673.css.map",
+    "main.f8047fda.js.map": "/music-school/static/js/main.f8047fda.js.map",
+    "631.cc09a792.chunk.css.map": "/music-school/static/css/631.cc09a792.chunk.css.map",
+    "631.340f400d.chunk.js.map": "/music-school/static/js/631.340f400d.chunk.js.map",
     "258.9dfe2711.chunk.js.map": "/music-school/static/js/258.9dfe2711.chunk.js.map",
     "453.08434b89.chunk.js.map": "/music-school/static/js/453.08434b89.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0250bdd3.css",
-    "static/js/main.c1bbb4a2.js"
+    "static/css/main.5ded4673.css",
+    "static/js/main.f8047fda.js"
   ]
 }
