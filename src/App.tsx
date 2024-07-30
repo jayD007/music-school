@@ -5,7 +5,7 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import './App.css';
-import { Hero, NavBar} from './components';
+import { Footer, Hero, NavBar } from './components';
 import { Router } from './routes';
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
       <Hero />
       <NavBar />
       <Router />
+      <Footer />
     </Container>
   );
 }

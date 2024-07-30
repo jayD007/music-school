@@ -42,6 +42,7 @@ export const NavBar = () => {
         backgroundColor: 'transparent',
         boxShadow: 'none',
         marginTop: 60,
+        marginBottom: 60,
       }}
     >
       <Container maxWidth="xl">
