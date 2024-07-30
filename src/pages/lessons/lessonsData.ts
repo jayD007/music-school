@@ -1,31 +1,34 @@
 import { Lessons } from '../../types';
+import { piano } from './data/piano';
+import { keyboard } from './data/keyboard';
+import { orgelles } from './data/orgelles';
+import { accordeon } from './data/accordion';
+import { introduction } from './data/introduction';
 
 export const lessonsData: Lessons = [
   {
     lesson: 'Pianoles',
-    description:
-      'De piano is een fantastisch instrument. Je combineert een melodie, meestal gespeeld met de rechterhand, met een begeleiding waar vaak een bas -en akkoordpartij wordt gecombineerd. Kortom: met een piano kun je ‘een compleet stukje muziek wegzetten’. Niet voor niets dat een piano sterk is vertegenwoordigd in diverse muziekstijlen: klassiek, jazz en popmuziek.',
+    description: piano,
     icon: 'DraftsIcon',
   },
   {
     lesson: 'Keyboardles',
-    description:
-      'De piano is een fantastisch instrument. Je combineert een melodie, meestal gespeeld met de rechterhand, met een begeleiding waar vaak een bas -en akkoordpartij wordt gecombineerd. Kortom: met een piano kun je ‘een compleet stukje muziek wegzetten’. Niet voor niets dat een piano sterk is vertegenwoordigd in diverse muziekstijlen: klassiek, jazz en popmuziek.',
+    description: keyboard,
     icon: 'SendIcon',
   },
   {
     lesson: 'Orgelles',
-    description: 'De piano is een fantastisch instrument.',
+    description: orgelles,
     icon: 'DraftsIcon',
   },
   {
     lesson: 'Accordeonles',
-    description: 'De piano is een fantastisch instrument.',
+    description: accordeon,
     icon: 'SendIcon',
   },
   {
-    lesson: 'Accordeonles',
-    description: 'De piano is een fantastisch instrument.',
+    lesson: 'Doel van de lessen en Lestarieven',
+    description: introduction,
     icon: 'SendIcon',
   },
   {

@@ -44,7 +44,10 @@ const Lessons = () => {
               <Typography>{l.lesson}</Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography>{l.description}</Typography>
+              <Typography
+                component="div"
+                dangerouslySetInnerHTML={{ __html: l.description }}
+              />
             </AccordionDetails>
           </Accordion>
         );
