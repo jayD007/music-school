@@ -16,9 +16,13 @@ const Lessons = () => {
       setExpanded(isExpanded ? index : false);
     };
 
+  const sortedLessonsData = [...lessonsData].sort((a, b) =>
+    a.lesson.localeCompare(b.lesson),
+  );
+
   return (
     <div>
-      {lessonsData.map((l, index: number) => {
+      {sortedLessonsData.map((l, index: number) => {
         return (
           <Accordion
             key={index}

@@ -1,5 +1,5 @@
 export const piano =
-  '<h1>Pagina Pianoles</h1>\n' +
+  '<h1>Pianoles</h1>\n' +
   '    <p>De piano is een fantastisch instrument. Je combineert een melodie, meestal gespeeld met de rechterhand, met een begeleiding waar vaak een bas -en akkoordpartij wordt gecombineerd. Kortom: met een piano kun je ‘een compleet stukje muziek wegzetten’. Niet voor niets dat een piano sterk is vertegenwoordigd in diverse muziekstijlen: klassiek, jazz en popmuziek.</p>\n' +
   '    <p>Wanneer je thuis een piano of een elektrische piano hebt dan kun je hiervoor bij me les nemen. Meld je aan voor een eerste kennismakingsles dan bekijken we samen welke richting je op wilt gaan:</p>\n' +
   '    <ul>\n' +

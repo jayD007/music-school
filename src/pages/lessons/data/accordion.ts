@@ -1,4 +1,4 @@
-export const accordeon =
+export const accordion =
   '<h1>Accordeonles</h1>\n' +
   '<p>Het instrument waar ik in gezelschap de meeste sfeer en gezelligheid heb gebracht is het accordeon. Een prachtig instrument waar je op een compacte manier melodie, akkoorden en bas kunt verenigen. Als vakleerkracht muziek op basisscholen begeleidde ik honderden kinderen bij het zingen van hun liedjes. Op Sinterklaasfeestjes bijvoorbeeld is het een instrument die de gezelligheid vergroot wanneer we allemaal mee zingen op het welbekende liedjesrepertoire. Kortom: een instrument dat je gemakkelijk mee neemt naar feestjes en partijen.</p>\n' +
   '<p>Naast het feit dat het accordeon ook een begeleidingsinstrument is voor liedjes kun je het uiteraard ook gebruiken voor solistisch werk. De Franse musette bijvoorbeeld is een genre waarin het accordeon virtuoos naar voren kan komen. Bovendien is het accordeon ook een instrument wat ook in volksmuziek een belangrijke rol speelt.</p>\n' +

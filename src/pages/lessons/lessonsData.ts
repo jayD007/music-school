@@ -1,9 +1,5 @@
 import { Lessons } from '../../types';
-import { piano } from './data/piano';
-import { keyboard } from './data/keyboard';
-import { orgelles } from './data/orgelles';
-import { accordeon } from './data/accordion';
-import { introduction } from './data/introduction';
+import { accordion, keyboard, orgelles, piano } from './data';
 
 export const lessonsData: Lessons = [
   {
@@ -23,14 +19,10 @@ export const lessonsData: Lessons = [
   },
   {
     lesson: 'Accordeonles',
-    description: accordeon,
+    description: accordion,
     icon: 'SendIcon',
   },
-  {
-    lesson: 'Doel van de lessen en Lestarieven',
-    description: introduction,
-    icon: 'SendIcon',
-  },
+
   {
     lesson: 'Accordeonles',
     description: 'De piano is een fantastisch instrument.',
