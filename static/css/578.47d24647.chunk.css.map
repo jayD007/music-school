@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/578.47d24647.chunk.css","mappings":"AAAA,cAGI,aAAe,CAFf,gBAAiB,CACjB,aAEJ,CAEA,QACI,aACJ","sources":["pages/about/style/about.css"],"sourcesContent":[".introduction {\n    font-size: 1.5rem;\n    margin: 1rem 0;\n    color: darkgrey;\n}\n\n.header {\n    color: firebrick;\n}"],"names":[],"sourceRoot":""}
