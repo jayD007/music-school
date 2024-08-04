@@ -4,11 +4,7 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
-interface Props {
-  // Define your props here
-}
-
-export const Footer: React.FC<Props> = (props) => {
+export const Footer = () => {
   return (
     <footer className="footer">
       <Container>
@@ -16,20 +12,31 @@ export const Footer: React.FC<Props> = (props) => {
           <Grid item xs={12} sm={4}>
             <Typography variant="h6">Muziekschool Heesch</Typography>
             <Typography variant="body1">
-              Wijststraat 19
-              <div>5384RA Heesch</div>
+              <a
+                href="https://maps.app.goo.gl/rS2UYk4n9s9Pk4P28"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="address"
+              >
+                Wijststraat 19
+                <div>5384RA Heesch</div>
+              </a>
             </Typography>
           </Grid>
           <Grid item xs={12} sm={4}>
-            <Typography variant="h6">Curses</Typography>
+            <Typography variant="h6">email</Typography>
             <Typography variant="body1">
-              Content for the second column.
+              <a href="mailto:frankmellise@musicschool.com" className="address">
+                frankmellise@musicschool.com
+              </a>
             </Typography>
           </Grid>
           <Grid item xs={12} sm={4}>
-            <Typography variant="h6">Column 3</Typography>
+            <Typography variant="h6">Phone</Typography>
             <Typography variant="body1">
-              Content for the third column.
+              <a href="tel:06-12345678" className="address">
+                06-12345678
+              </a>
             </Typography>
           </Grid>
         </Grid>
