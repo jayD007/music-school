@@ -1,0 +1,30 @@
+/* ContactForm.css */
+.custom-text-field .MuiOutlinedInput-root {
+    &.Mui-focused .MuiOutlinedInput-notchedOutline {
+        border-color: #B0960A;
+    }
+
+    &:hover .MuiOutlinedInput-notchedOutline {
+        border-color: #B0960A;
+    }
+
+    .MuiOutlinedInput-notchedOutline {
+        border-color: #d3c970;
+    }
+
+    .MuiInputBase-input {
+        color: darkgrey; /* Default text color */
+    }
+
+    &.Mui-focused .MuiInputBase-input {
+        color: white; /* Text color on focus */
+    }
+}
+
+.custom-text-field .MuiInputLabel-root {
+    color: lightgrey; /* Default label color */
+}
+
+.custom-text-field .Mui-focused .MuiInputLabel-root {
+    color: darkgrey; /* Label color on focus */
+}

@@ -5,5 +5,5 @@ export const pages: Page = [
   { title: 'Home', route: routes.home },
   { title: 'Lessen', route: routes.lessons },
   { title: 'About', route: routes.about },
-  { title: 'Contact', route: '' },
+  { title: 'Contact', route: routes.contact },
 ];

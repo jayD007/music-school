@@ -2,3 +2,7 @@ body {
     background: black;
 }
 
+.border {
+    border-radius: 45px !important;
+    border: 1px solid #B0960A !important;
+}
