@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/music-school/static/css/main.d3be9e30.css",
-    "main.js": "/music-school/static/js/main.06beb93d.js",
+    "main.css": "/music-school/static/css/main.b05b2fc6.css",
+    "main.js": "/music-school/static/js/main.74d985e7.js",
     "static/css/688.a347fabb.chunk.css": "/music-school/static/css/688.a347fabb.chunk.css",
     "static/js/688.3092118a.chunk.js": "/music-school/static/js/688.3092118a.chunk.js",
     "static/css/578.47d24647.chunk.css": "/music-school/static/css/578.47d24647.chunk.css",
@@ -72,8 +72,8 @@
     "static/media/roboto-greek-ext-300-normal.woff": "/music-school/static/media/roboto-greek-ext-300-normal.392a45a84c081c4b412d.woff",
     "static/media/roboto-greek-ext-400-normal.woff": "/music-school/static/media/roboto-greek-ext-400-normal.f708607d2a7290fb8bfa.woff",
     "static/media/roboto-greek-ext-700-normal.woff": "/music-school/static/media/roboto-greek-ext-700-normal.249853776d22a271b2b5.woff",
-    "main.d3be9e30.css.map": "/music-school/static/css/main.d3be9e30.css.map",
-    "main.06beb93d.js.map": "/music-school/static/js/main.06beb93d.js.map",
+    "main.b05b2fc6.css.map": "/music-school/static/css/main.b05b2fc6.css.map",
+    "main.74d985e7.js.map": "/music-school/static/js/main.74d985e7.js.map",
     "688.a347fabb.chunk.css.map": "/music-school/static/css/688.a347fabb.chunk.css.map",
     "688.3092118a.chunk.js.map": "/music-school/static/js/688.3092118a.chunk.js.map",
     "578.47d24647.chunk.css.map": "/music-school/static/css/578.47d24647.chunk.css.map",
@@ -86,7 +86,7 @@
     "847.b94c448f.chunk.js.map": "/music-school/static/js/847.b94c448f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d3be9e30.css",
-    "static/js/main.06beb93d.js"
+    "static/css/main.b05b2fc6.css",
+    "static/js/main.74d985e7.js"
   ]
 }
