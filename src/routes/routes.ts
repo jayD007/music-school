@@ -5,4 +5,5 @@ export const routes = {
   about: `${baseUrl}about`,
   lessons: `${baseUrl}lessons`,
   contact: `${baseUrl}contact`,
+  gallery: `${baseUrl}gallery`,
 };
