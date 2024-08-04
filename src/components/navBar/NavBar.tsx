@@ -19,14 +19,17 @@ export const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null,
   );
+  const [activeTab, setActiveTab] = React.useState<string>(pages[0].title);
 
   const navigate = useNavigate();
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleMenuItemClick = (route: string) => {
+
+  const handleMenuItemClick = (route: string, title: string) => {
     handleCloseNavMenu();
+    setActiveTab(title);
     navigate(route);
   };
 
@@ -104,7 +107,8 @@ export const NavBar = () => {
               {pages.map((page) => (
                 <MenuItem
                   key={page.title}
-                  onClick={() => handleMenuItemClick(page.route)}
+                  onClick={() => handleMenuItemClick(page.route, page.title)}
+                  selected={activeTab === page.title}
                 >
                   <Typography textAlign="center">{page.title}</Typography>
                 </MenuItem>
@@ -140,8 +144,16 @@ export const NavBar = () => {
             {pages.map((page) => (
               <Button
                 key={page.title}
-                onClick={() => handleMenuItemClick(page.route)}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                onClick={() => handleMenuItemClick(page.route, page.title)}
+                sx={{
+                  my: 2,
+                  color: activeTab === page.title ? 'red' : 'white',
+                  display: 'block',
+                  backgroundColor:
+                    activeTab === page.title
+                      ? 'rgba(0, 0, 0, 0.1)'
+                      : 'transparent',
+                }}
               >
                 {page.title}
               </Button>
