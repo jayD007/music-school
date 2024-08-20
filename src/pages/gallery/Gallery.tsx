@@ -127,7 +127,7 @@ const Gallery = () => {
             transform: 'translate(-50%, -50%)',
             width: '80%',
             maxWidth: '600px',
-            bgcolor: 'background.paper',
+            bgcolor: '#1a1919',
             boxShadow: 24,
             p: 4,
             '@media (max-width: 600px)': {
