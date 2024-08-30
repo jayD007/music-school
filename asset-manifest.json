@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/music-school/static/css/main.009e132a.css",
-    "main.js": "/music-school/static/js/main.d7ff08aa.js",
+    "main.js": "/music-school/static/js/main.b4c0fa78.js",
     "static/css/688.a347fabb.chunk.css": "/music-school/static/css/688.a347fabb.chunk.css",
     "static/js/688.b09706c5.chunk.js": "/music-school/static/js/688.b09706c5.chunk.js",
     "static/css/578.47d24647.chunk.css": "/music-school/static/css/578.47d24647.chunk.css",
     "static/js/578.2ea8ac47.chunk.js": "/music-school/static/js/578.2ea8ac47.chunk.js",
     "static/css/955.b8a68eba.chunk.css": "/music-school/static/css/955.b8a68eba.chunk.css",
-    "static/js/955.360dcd57.chunk.js": "/music-school/static/js/955.360dcd57.chunk.js",
+    "static/js/955.02adfe3e.chunk.js": "/music-school/static/js/955.02adfe3e.chunk.js",
     "static/css/446.4139f704.chunk.css": "/music-school/static/css/446.4139f704.chunk.css",
     "static/js/446.b33fb8cf.chunk.js": "/music-school/static/js/446.b33fb8cf.chunk.js",
-    "static/js/780.6972048b.chunk.js": "/music-school/static/js/780.6972048b.chunk.js",
+    "static/js/780.f8bd2704.chunk.js": "/music-school/static/js/780.f8bd2704.chunk.js",
     "static/js/453.08434b89.chunk.js": "/music-school/static/js/453.08434b89.chunk.js",
-    "static/js/847.228b0de5.chunk.js": "/music-school/static/js/847.228b0de5.chunk.js",
+    "static/js/847.eb84752f.chunk.js": "/music-school/static/js/847.eb84752f.chunk.js",
     "static/media/frankCropFull.jpg": "/music-school/static/media/frankCropFull.2bb7b521a3b1e8cacb17.jpg",
     "static/media/frankCrop.jpg": "/music-school/static/media/frankCrop.7c167e0667665e740108.jpg",
     "static/media/heroImage.jpg": "/music-school/static/media/heroImage.89b54363735efc04d211.jpg",
@@ -74,21 +74,21 @@
     "static/media/roboto-greek-ext-400-normal.woff": "/music-school/static/media/roboto-greek-ext-400-normal.f708607d2a7290fb8bfa.woff",
     "static/media/roboto-greek-ext-700-normal.woff": "/music-school/static/media/roboto-greek-ext-700-normal.249853776d22a271b2b5.woff",
     "main.009e132a.css.map": "/music-school/static/css/main.009e132a.css.map",
-    "main.d7ff08aa.js.map": "/music-school/static/js/main.d7ff08aa.js.map",
+    "main.b4c0fa78.js.map": "/music-school/static/js/main.b4c0fa78.js.map",
     "688.a347fabb.chunk.css.map": "/music-school/static/css/688.a347fabb.chunk.css.map",
     "688.b09706c5.chunk.js.map": "/music-school/static/js/688.b09706c5.chunk.js.map",
     "578.47d24647.chunk.css.map": "/music-school/static/css/578.47d24647.chunk.css.map",
     "578.2ea8ac47.chunk.js.map": "/music-school/static/js/578.2ea8ac47.chunk.js.map",
     "955.b8a68eba.chunk.css.map": "/music-school/static/css/955.b8a68eba.chunk.css.map",
-    "955.360dcd57.chunk.js.map": "/music-school/static/js/955.360dcd57.chunk.js.map",
+    "955.02adfe3e.chunk.js.map": "/music-school/static/js/955.02adfe3e.chunk.js.map",
     "446.4139f704.chunk.css.map": "/music-school/static/css/446.4139f704.chunk.css.map",
     "446.b33fb8cf.chunk.js.map": "/music-school/static/js/446.b33fb8cf.chunk.js.map",
-    "780.6972048b.chunk.js.map": "/music-school/static/js/780.6972048b.chunk.js.map",
+    "780.f8bd2704.chunk.js.map": "/music-school/static/js/780.f8bd2704.chunk.js.map",
     "453.08434b89.chunk.js.map": "/music-school/static/js/453.08434b89.chunk.js.map",
-    "847.228b0de5.chunk.js.map": "/music-school/static/js/847.228b0de5.chunk.js.map"
+    "847.eb84752f.chunk.js.map": "/music-school/static/js/847.eb84752f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.009e132a.css",
-    "static/js/main.d7ff08aa.js"
+    "static/js/main.b4c0fa78.js"
   ]
 }
