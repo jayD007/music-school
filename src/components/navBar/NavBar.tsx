@@ -11,9 +11,9 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import './style/navbar.css';
-
 import { useNavigate } from 'react-router-dom';
 import { pages } from './constants/pages';
+import { ListItemIcon, ListItemText, MenuList } from '@mui/material';
 
 export const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -102,17 +102,46 @@ export const NavBar = () => {
               onClose={handleCloseNavMenu}
               sx={{
                 display: { xs: 'block', md: 'none' },
+                '& .MuiPaper-root': {
+                  backgroundColor: 'rgba(0, 0, 0, 0.7)', // Semi-transparent background
+                  backdropFilter: 'blur(15px)', // Blurry glass effect
+                },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem
-                  key={page.title}
-                  onClick={() => handleMenuItemClick(page.route, page.title)}
-                  selected={activeTab === page.title}
-                >
-                  <Typography textAlign="center">{page.title}</Typography>
-                </MenuItem>
-              ))}
+              <div style={{ width: '250px' }}>
+                {pages.map((page, index) => (
+                  <MenuList>
+                    <MenuItem
+                      key={page.title}
+                      onClick={() =>
+                        handleMenuItemClick(page.route, page.title)
+                      }
+                      selected={activeTab === page.title}
+                    >
+                      <ListItemIcon>
+                        {page.icon &&
+                          React.createElement(page.icon, {
+                            style: {
+                              color: '#B0960A',
+                              fontSize: '2rem',
+                              paddingRight: '20px',
+                            },
+                          })}
+                      </ListItemIcon>
+                      <ListItemText>
+                        <Typography
+                          style={{
+                            color: 'white',
+                            fontWeight: 100,
+                          }}
+                        >
+                          {page.title}
+                        </Typography>
+                      </ListItemText>
+                    </MenuItem>
+                  </MenuList>
+                ))}
+              </div>
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
