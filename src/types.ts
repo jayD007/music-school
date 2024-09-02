@@ -20,7 +20,6 @@ export type GalleryItem = {
 
 export type FormData = {
   firstName: string;
-  middleName: string;
   lastName: string;
   question: string;
   age: string;

@@ -14,7 +14,12 @@ export const pages: Page[] = [
     id: 'home',
   },
   { title: 'Lessen', route: routes.lessons, icon: MenuBookIcon, id: 'lessons' },
-  { title: 'About', route: routes.about, icon: InfoTwoToneIcon, id: 'about' },
+  {
+    title: 'Tarief',
+    route: routes.about,
+    icon: InfoTwoToneIcon,
+    id: 'about',
+  },
   {
     title: 'Contact',
     route: routes.contact,
