@@ -1,9 +1,6 @@
 export const introductionLessonHeader: string =
   'Doel van de lessen en Lestarieven';
 
-export const introductionLessonText: string =
-  'Voordat we samen een lestraject ingaan wil ik eerste samen met je gaan bekijken wat jouw wensen zijn t.a.v. jouw muziekles. We plannen hiervoor een eerste kennismakingsles. Ik vind het namelijk belangrijk te weten waarom jij over wilt gaan tot het volgen van instrumentale lessen.';
-
 export const introLessonQuestions = [
   { question: 'Wil je vooral van bladmuziek spelen?' },
   {
@@ -58,4 +55,13 @@ export const introductionLessonDetails: string = `
 <br />
 <br />
 Ik werk niet met vaste jaarcontracten. Je betaalt gewoon per les.
+<br />
+<br />
+Een individuele les van 30 minuten kost € 25,00, voor leerlingen van 21 jaar of jonger.
+<p>Een individuele les van 30 minuten kost € 30,00, voor leerlingen die ouder zijn dan 21 jaar.
+
+<br />
+<br />
+Een eerste kennismakingsles kost € 20,00.
+
 `;

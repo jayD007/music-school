@@ -22,10 +22,4 @@ export const lessonsData: Lessons = [
     description: accordion,
     icon: 'SendIcon',
   },
-
-  {
-    lesson: 'Accordeonles',
-    description: 'De piano is een fantastisch instrument.',
-    icon: 'SendIcon',
-  },
 ];
