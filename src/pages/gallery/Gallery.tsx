@@ -10,6 +10,7 @@ import Button from '@mui/material/Button';
 import CloseIcon from '@mui/icons-material/Close';
 import { itemData } from './photoData';
 import Header from '../../components/header/Header';
+import ScrollToTopButton from '../../components/scrollToTopButton/ScrollToTopButton';
 
 function srcset(
   image: string,
@@ -211,6 +212,7 @@ const Gallery = () => {
           )}
         </Box>
       </Modal>
+      <ScrollToTopButton />
     </>
   );
 };

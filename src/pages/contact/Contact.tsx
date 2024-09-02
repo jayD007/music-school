@@ -11,11 +11,12 @@ import {
   TextField,
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import './style/contact.css';
 import Header from '../../components/header/Header';
+import './style/contact.css';
+import { FormData } from '../../types';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     firstName: '',
     middleName: '',
     lastName: '',
@@ -25,16 +26,13 @@ const Contact = () => {
     phone: '',
   });
 
-  const [open, setOpen] = useState(false);
-  const navigate = useNavigate();
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [name as keyof FormData]: value });
   };
+
+  const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -46,6 +44,7 @@ const Contact = () => {
       `First Name: ${formData.firstName}\nMiddle Name: ${formData.middleName}\nLast Name: ${formData.lastName}\nAge: ${formData.age}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nQuestion: ${formData.question}`,
     )}`;
   };
+
   const handleClose = () => {
     setOpen(false);
     navigate('/');
@@ -56,90 +55,41 @@ const Contact = () => {
       <Header text="Contact" />
       <form onSubmit={handleSubmit}>
         <Grid container spacing={2}>
-          <Grid item xs={12} sm={6} lg={12}>
-            <TextField
-              fullWidth
-              label="First Name"
-              name="firstName"
-              variant="outlined"
-              value={formData.firstName}
-              onChange={handleChange}
-              required
-              className="custom-text-field"
-            />
-          </Grid>
-          <Grid item xs={12} sm={6} lg={12}>
-            <TextField
-              fullWidth
-              label="Middle Name"
-              name="middleName"
-              value={formData.middleName}
-              onChange={handleChange}
-              className="custom-text-field"
-            />
-          </Grid>
-          <Grid item xs={12} sm={6} lg={12}>
-            <TextField
-              fullWidth
-              label="Last Name"
-              name="lastName"
-              value={formData.lastName}
-              onChange={handleChange}
-              required
-              className="custom-text-field"
-            />
-          </Grid>
-          <Grid item xs={12} sm={6} lg={12}>
-            <TextField
-              fullWidth
-              label="Age"
-              name="age"
-              type="number"
-              value={formData.age}
-              onChange={handleChange}
-              required
-              className="custom-text-field"
-            />
-          </Grid>
-
-          <Grid item xs={12} lg={12}>
-            <TextField
-              fullWidth
-              label="Email ID"
-              name="email"
-              type="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="custom-text-field"
-            />
-          </Grid>
-          <Grid item xs={12} lg={12}>
-            <TextField
-              fullWidth
-              label="Phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-              className="custom-text-field"
-            />
-          </Grid>
-          <Grid item xs={12} sm={6} lg={12}>
-            <TextField
-              fullWidth
-              label="Question"
-              name="question"
-              type="text"
-              value={formData.question}
-              onChange={handleChange}
-              required
-              multiline={true}
-              rows={4}
-              className="custom-text-field"
-            />
-          </Grid>
-          <Grid item xs={3} lg={3}>
+          {(
+            [
+              'firstName',
+              'middleName',
+              'lastName',
+              'age',
+              'email',
+              'phone',
+              'question',
+            ] as (keyof FormData)[]
+          ).map((field, index) => (
+            <Grid item xs={12} key={index}>
+              <TextField
+                fullWidth
+                label={field
+                  .replace(/([A-Z])/g, ' $1')
+                  .replace(/^./, (str) => str.toUpperCase())}
+                name={field}
+                type={
+                  field === 'age'
+                    ? 'number'
+                    : field === 'email'
+                      ? 'email'
+                      : 'text'
+                }
+                value={formData[field]}
+                onChange={handleChange}
+                required={field !== 'middleName'}
+                multiline={field === 'question'}
+                rows={field === 'question' ? 4 : 1}
+                className="custom-text-field"
+              />
+            </Grid>
+          ))}
+          <Grid item xs={12}>
             <Button type="submit" variant="contained" color="success" fullWidth>
               Send
             </Button>

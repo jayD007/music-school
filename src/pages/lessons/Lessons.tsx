@@ -1,63 +1,64 @@
-import * as React from 'react';
-import Accordion, { AccordionSlots } from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
+import React, { useState } from 'react';
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Fade,
+  Typography,
+} from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Fade from '@mui/material/Fade';
 import { lessonsData } from './lessonsData';
 import './style/lesson.css';
 import Header from '../../components/header/Header';
+import { AccordionSlots } from '@mui/material/Accordion';
 
 const Lessons = () => {
-  const [expanded, setExpanded] = React.useState<number | false>(false);
+  const [expanded, setExpanded] = useState<number | false>(false);
 
   const handleExpansion =
     (index: number) => (event: React.SyntheticEvent, isExpanded: boolean) => {
       setExpanded(isExpanded ? index : false);
     };
 
-  const sortedLessonsData = [...lessonsData].sort((a, b) =>
+  const sortedLessonsData = lessonsData.sort((a, b) =>
     a.lesson.localeCompare(b.lesson),
   );
 
   return (
     <div id="lesson">
       <Header text="Lessen" />
-      {sortedLessonsData.map((l, index: number) => {
-        return (
-          <Accordion
-            key={index}
-            expanded={expanded === index}
-            onChange={handleExpansion(index)}
-            slots={{ transition: Fade as AccordionSlots['transition'] }}
-            slotProps={{ transition: { timeout: 400 } }}
-            sx={{
-              '& .MuiAccordion-region': {
-                height: expanded === index ? 'auto' : 0,
-              },
-              '& .MuiAccordionDetails-root': {
-                display: expanded === index ? 'block' : 'none',
-              },
-            }}
-            className="lesson-accordion"
+      {sortedLessonsData.map((l, index) => (
+        <Accordion
+          key={index}
+          expanded={expanded === index}
+          onChange={handleExpansion(index)}
+          slots={{ transition: Fade as AccordionSlots['transition'] }}
+          slotProps={{ transition: { timeout: 400 } }}
+          className="lesson-accordion"
+          sx={{
+            '& .MuiAccordion-region': {
+              height: expanded === index ? 'auto' : 0,
+            },
+            '& .MuiAccordionDetails-root': {
+              display: expanded === index ? 'block' : 'none',
+            },
+          }}
+        >
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls={`panel${index}-content`}
+            id={`panel${index}-header`}
           >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
-              aria-controls={`panel${index}-content`}
-              id={`panel${index}-header`}
-            >
-              <Typography>{l.lesson}</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Typography
-                component="div"
-                dangerouslySetInnerHTML={{ __html: l.description }}
-              />
-            </AccordionDetails>
-          </Accordion>
-        );
-      })}
+            <Typography>{l.lesson}</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography
+              component="div"
+              dangerouslySetInnerHTML={{ __html: l.description }}
+            />
+          </AccordionDetails>
+        </Accordion>
+      ))}
     </div>
   );
 };

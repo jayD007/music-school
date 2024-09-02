@@ -34,10 +34,12 @@ export const Footer = () => {
           <Grid item xs={12} sm={4}>
             <Typography variant="h6">Phone</Typography>
             <Typography variant="body1">
-              <a href="tel:06-12345678" className="address">
-                06-12345678
+              <a href="tel:06-18402583" className="address">
+                06-18402583
               </a>
             </Typography>
+            <Typography variant="h6">kvk-nummer</Typography>
+            <Typography variant="body1">94782326</Typography>
           </Grid>
         </Grid>
       </Container>

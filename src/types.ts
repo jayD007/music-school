@@ -17,3 +17,13 @@ export type GalleryItem = {
   featured?: boolean;
   author?: string;
 }[];
+
+export type FormData = {
+  firstName: string;
+  middleName: string;
+  lastName: string;
+  question: string;
+  age: string;
+  email: string;
+  phone: string;
+};
