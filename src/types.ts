@@ -2,6 +2,7 @@ export type Page = {
   title: string;
   route: string;
   icon?: any;
+  id: string;
 };
 
 export type Lessons = {

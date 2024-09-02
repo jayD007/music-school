@@ -7,17 +7,24 @@ import PermContactCalendarTwoToneIcon from '@mui/icons-material/PermContactCalen
 import PhotoSizeSelectActualTwoToneIcon from '@mui/icons-material/PhotoSizeSelectActualTwoTone';
 
 export const pages: Page[] = [
-  { title: 'Home', route: routes.home, icon: HouseSidingTwoToneIcon },
-  { title: 'Lessen', route: routes.lessons, icon: MenuBookIcon },
-  { title: 'About', route: routes.about, icon: InfoTwoToneIcon },
+  {
+    title: 'Home',
+    route: routes.home,
+    icon: HouseSidingTwoToneIcon,
+    id: 'home',
+  },
+  { title: 'Lessen', route: routes.lessons, icon: MenuBookIcon, id: 'lessons' },
+  { title: 'About', route: routes.about, icon: InfoTwoToneIcon, id: 'about' },
   {
     title: 'Contact',
     route: routes.contact,
     icon: PermContactCalendarTwoToneIcon,
+    id: 'contact',
   },
   {
     title: 'Gallery',
     route: routes.gallery,
     icon: PhotoSizeSelectActualTwoToneIcon,
+    id: 'gallery',
   },
 ];

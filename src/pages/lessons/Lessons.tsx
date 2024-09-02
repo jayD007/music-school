@@ -7,6 +7,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Fade from '@mui/material/Fade';
 import { lessonsData } from './lessonsData';
 import './style/lesson.css';
+import Header from '../../components/header/Header';
 
 const Lessons = () => {
   const [expanded, setExpanded] = React.useState<number | false>(false);
@@ -21,7 +22,8 @@ const Lessons = () => {
   );
 
   return (
-    <div>
+    <div id="lesson">
+      <Header text="Lessen" />
       {sortedLessonsData.map((l, index: number) => {
         return (
           <Accordion

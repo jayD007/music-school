@@ -9,10 +9,10 @@ import {
   DialogTitle,
   Grid,
   TextField,
-  Typography,
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import './style/contact.css';
+import Header from '../../components/header/Header';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -43,10 +43,7 @@ const Contact = () => {
       return;
     }
     window.location.href = `mailto:jayanta7.deb@gmail.com?subject=Contact Form Submission&body=${encodeURIComponent(
-      `First Name: ${formData.firstName}\nMiddle Name: ${formData.middleName}\nLast Name: ${formData.lastName}\nAge: ${formData.age}\nQuestion: ${formData.question}\nEmail: ${formData.email}\nPhone: ${formData.phone}`,
-    )}`;
-    window.location.href = `mailto:jayanta7.deb@gmail.com?subject=Contact Form Submission&body=${encodeURIComponent(
-      `First Name: ${formData.firstName}\nMiddle Name: ${formData.middleName}\nLast Name: ${formData.lastName}\nAge: ${formData.age}\nQuestion: ${formData.question}\nEmail: ${formData.email}\nPhone: ${formData.phone}`,
+      `First Name: ${formData.firstName}\nMiddle Name: ${formData.middleName}\nLast Name: ${formData.lastName}\nAge: ${formData.age}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nQuestion: ${formData.question}`,
     )}`;
   };
   const handleClose = () => {
@@ -55,10 +52,8 @@ const Contact = () => {
   };
 
   return (
-    <Container maxWidth="sm">
-      <Typography variant="h4" color="whitesmoke" gutterBottom>
-        Contact Form
-      </Typography>
+    <Container maxWidth="sm" id="contact">
+      <Header text="Contact" />
       <form onSubmit={handleSubmit}>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6} lg={12}>

@@ -7,13 +7,12 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import './style/navbar.css';
 import { useNavigate } from 'react-router-dom';
 import { pages } from './constants/pages';
-import { ListItemIcon, ListItemText, MenuList } from '@mui/material';
+import { Button, ListItemIcon, ListItemText, MenuList } from '@mui/material';
 
 export const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -27,10 +26,14 @@ export const NavBar = () => {
     setAnchorElNav(event.currentTarget);
   };
 
-  const handleMenuItemClick = (route: string, title: string) => {
+  const handleMenuItemClick = (route: string, title: string, id: string) => {
     handleCloseNavMenu();
     setActiveTab(title);
     navigate(route);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   const handleCloseNavMenu = () => {
@@ -110,11 +113,10 @@ export const NavBar = () => {
             >
               <div style={{ width: '250px' }}>
                 {pages.map((page, index) => (
-                  <MenuList>
+                  <MenuList key={index}>
                     <MenuItem
-                      key={page.title}
                       onClick={() =>
-                        handleMenuItemClick(page.route, page.title)
+                        handleMenuItemClick(page.route, page.title, page.id)
                       }
                       selected={activeTab === page.title}
                     >
@@ -173,7 +175,9 @@ export const NavBar = () => {
             {pages.map((page) => (
               <Button
                 key={page.title}
-                onClick={() => handleMenuItemClick(page.route, page.title)}
+                onClick={() =>
+                  handleMenuItemClick(page.route, page.title, page.id)
+                }
                 sx={{
                   my: 2,
                   color: activeTab === page.title ? 'red' : 'white',

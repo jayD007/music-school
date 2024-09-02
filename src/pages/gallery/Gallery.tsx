@@ -9,6 +9,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import CloseIcon from '@mui/icons-material/Close';
 import { itemData } from './photoData';
+import Header from '../../components/header/Header';
 
 function srcset(
   image: string,
@@ -67,6 +68,7 @@ const Gallery = () => {
 
   return (
     <>
+      <Header text="Gallery" />
       <ImageList
         sx={{
           width: '100%',
@@ -74,6 +76,7 @@ const Gallery = () => {
         }}
         rowHeight={200}
         gap={1}
+        id="gallery"
       >
         {itemData.map((item, index) => {
           const cols = item.featured ? 2 : 1;

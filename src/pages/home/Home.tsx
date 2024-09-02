@@ -8,7 +8,7 @@ const Home: React.FC = (props) => {
   const { width } = GetScreenResolution();
 
   return (
-    <div>
+    <div id="home">
       <h1 className="header">
         Muziek maken geeft voldoening, <br />
         verbindt mensen.
