@@ -3,6 +3,7 @@ import {
   Box,
   Button,
   Container,
+  IconButton,
   Modal,
   TextField,
   Typography,
@@ -10,6 +11,8 @@ import {
 import Header from '../../components/header/Header';
 import './style/contact.css';
 import { email, emailSubject } from '../../utils';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 interface FormData {
   voornaam: string;
@@ -32,6 +35,7 @@ const Contact = () => {
 
   const [errors, setErrors] = useState<Partial<FormData>>({});
   const [modalOpen, setModalOpen] = useState(false);
+  const [copyStatus, setCopyStatus] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -69,6 +73,27 @@ const Contact = () => {
       window.location.href = `mailto:${email}?subject=${emailSubject}: ${formData.voornaam}&body=${encodeURIComponent(emailBody)}`;
       setModalOpen(true);
     }
+  };
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(email).then(() => {
+      setCopyStatus(true);
+      setTimeout(() => {
+        setCopyStatus(false);
+      }, 3000);
+    });
+  };
+
+  const handleClose = () => {
+    setModalOpen(false);
+    setFormData({
+      voornaam: '',
+      achternaam: '',
+      leeftijd: '',
+      email: '',
+      telefoon: '',
+      vraag: '',
+    });
   };
 
   return (
@@ -153,7 +178,7 @@ const Contact = () => {
           Stuur
         </Button>
       </form>
-      <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
+      <Modal open={modalOpen} onClose={() => handleClose}>
         <Box
           sx={{
             position: 'absolute',
@@ -173,7 +198,18 @@ const Contact = () => {
             De e-mailapplicatie moet op uw apparaat zijn geopend. Als dit niet
             het geval is, stuur dan uw e-mail naar dit adres:&nbsp;
             {email}
+            <span>
+              <IconButton color="primary" onClick={handleCopy} sx={{ ml: 2 }}>
+                <ContentCopyIcon />
+              </IconButton>
+            </span>
           </Typography>
+          {copyStatus && (
+            <Box sx={{ display: 'flex', alignItems: 'center', mt: 2 }}>
+              <CheckCircleIcon color="success" />
+              <Typography sx={{ ml: 1 }}>Copied</Typography>
+            </Box>
+          )}
         </Box>
       </Modal>
     </Container>
