@@ -18,7 +18,6 @@ import { FormData } from '../../types';
 const Contact = () => {
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
-    middleName: '',
     lastName: '',
     question: '',
     age: '',
@@ -41,7 +40,7 @@ const Contact = () => {
       return;
     }
     window.location.href = `mailto:jayanta7.deb@gmail.com?subject=Contact Form Submission&body=${encodeURIComponent(
-      `First Name: ${formData.firstName}\nMiddle Name: ${formData.middleName}\nLast Name: ${formData.lastName}\nAge: ${formData.age}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nQuestion: ${formData.question}`,
+      `First Name: ${formData.firstName}\nLast Name: ${formData.lastName}\nAge: ${formData.age}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nQuestion: ${formData.question}`,
     )}`;
   };
 
@@ -82,7 +81,6 @@ const Contact = () => {
                 }
                 value={formData[field]}
                 onChange={handleChange}
-                required={field !== 'middleName'}
                 multiline={field === 'question'}
                 rows={field === 'question' ? 4 : 1}
                 className="custom-text-field"
