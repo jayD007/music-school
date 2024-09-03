@@ -8,45 +8,43 @@ import finalPerformance from '../../assest/galleryPhotos/finalPerformance.jpg';
 
 import groupPerformance from '../../assest/galleryPhotos/groupPerformance.jpg';
 
+const altTag = (alt: string) => {
+  return 'muzik-school-heesch-frank' + alt;
+};
+
 export const itemData: GalleryItem = [
   {
     img: solo,
-    title: 'Breakfast',
-    author: '@bkristastucchio',
+    alt: altTag('solo'),
     featured: true,
   },
 
   {
     img: groupPerformance,
-    title: 'Camera',
-    author: '@helloimnik',
+    alt: altTag('groupPerformance'),
   },
 
   {
     img: finalPerformance,
-    title: 'Burger',
-    author: '@rollelflex_graphy726',
+    alt: altTag('finalPerformance'),
     featured: true,
   },
   {
     img: piano_les,
-    title: 'Honey',
-    author: '@arwinneil',
+    alt: altTag('piano-lesson'),
+
     featured: true,
   },
   {
     img: finalGroupPerformance,
-    title: 'Mushrooms',
-    author: '@silverdalex',
+    alt: altTag('final-group-performance'),
   },
   {
     img: accordion2,
-    title: 'Sea star',
-    author: '@peterlaster',
+    alt: altTag('accordion'),
   },
   {
     img: accordion1,
-    title: 'Bike',
-    author: '@southside_customs',
+    alt: altTag('accordion'),
   },
 ];

@@ -3,7 +3,6 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import IconButton from '@mui/material/IconButton';
-import StarBorderIcon from '@mui/icons-material/StarBorder';
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -91,7 +90,7 @@ const Gallery = () => {
             >
               <img
                 {...srcset(item.img, 250, 200, rows, cols)}
-                alt={item.title}
+                alt={item.alt}
                 loading="lazy"
               />
               <ImageListItemBar
@@ -102,14 +101,6 @@ const Gallery = () => {
                 }}
                 title={item.title}
                 position="top"
-                actionIcon={
-                  <IconButton
-                    sx={{ color: 'white' }}
-                    aria-label={`star ${item.title}`}
-                  >
-                    <StarBorderIcon />
-                  </IconButton>
-                }
                 actionPosition="left"
               />
             </ImageListItem>

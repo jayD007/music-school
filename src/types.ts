@@ -13,7 +13,8 @@ export type Lessons = {
 
 export type GalleryItem = {
   img: string;
-  title: string;
+  title?: string;
+  alt?: string;
   featured?: boolean;
   author?: string;
 }[];
