@@ -79,20 +79,17 @@ const Contact = () => {
     navigator.clipboard.writeText(email).then(() => {
       setCopyStatus(true);
       setTimeout(() => {
+        setModalOpen(false);
         setCopyStatus(false);
+        setFormData({
+          voornaam: '',
+          achternaam: '',
+          leeftijd: '',
+          email: '',
+          telefoon: '',
+          vraag: '',
+        });
       }, 3000);
-    });
-  };
-
-  const handleClose = () => {
-    setModalOpen(false);
-    setFormData({
-      voornaam: '',
-      achternaam: '',
-      leeftijd: '',
-      email: '',
-      telefoon: '',
-      vraag: '',
     });
   };
 
@@ -178,7 +175,7 @@ const Contact = () => {
           Stuur
         </Button>
       </form>
-      <Modal open={modalOpen} onClose={() => handleClose}>
+      <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
         <Box
           sx={{
             position: 'absolute',
