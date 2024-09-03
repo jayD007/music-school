@@ -171,7 +171,7 @@ const Contact = () => {
           </Typography>
           <Typography sx={{ mt: 2 }}>
             De e-mailapplicatie moet op uw apparaat zijn geopend. Als dit niet
-            het geval is, stuur dan uw e-mail naar dit adres
+            het geval is, stuur dan uw e-mail naar dit adres:&nbsp;
             {email}
           </Typography>
         </Box>
