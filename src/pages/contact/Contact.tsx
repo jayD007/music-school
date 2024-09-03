@@ -189,7 +189,7 @@ const Contact = () => {
           }}
         >
           <Typography variant="h6" component="h2">
-            Thank you
+            Dank u voor uw bericht!
           </Typography>
           <Typography sx={{ mt: 2 }}>
             De e-mailapplicatie moet op uw apparaat zijn geopend. Als dit niet

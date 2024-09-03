@@ -12,7 +12,7 @@ import './style/navbar.css';
 import { useNavigate } from 'react-router-dom';
 import { pages } from './constants/pages';
 import { Button, ListItemIcon, ListItemText, MenuList } from '@mui/material';
-import logo from '../../assest/icons/muziekschool_heesch.png';
+import logo from '../../assest/icons/muziekschool_heesch_logo.png';
 
 export const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -53,7 +53,11 @@ export const NavBar = () => {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img src={logo} alt="Muziekschool Heesch" />
+          <img
+            src={logo}
+            alt="Muziekschool Heesch"
+            style={{ width: '12rem' }}
+          />
 
           <Box
             sx={{
