@@ -3,6 +3,7 @@ import './style/footer.css';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+import { email, kvk, phone } from '../../utils';
 
 export const Footer = () => {
   return (
@@ -26,20 +27,20 @@ export const Footer = () => {
           <Grid item xs={12} sm={4}>
             <Typography variant="h6">email</Typography>
             <Typography variant="body1">
-              <a href="mailto:frankmellise@musicschool.com" className="address">
-                frankmellise@musicschool.com
+              <a href={`mailto:${email}`} className="address">
+                {email}
+              </a>
+            </Typography>
+            <Typography variant="h6">Phone</Typography>
+            <Typography variant="body1">
+              <a href={`tel:${phone}`} className="address">
+                {phone}
               </a>
             </Typography>
           </Grid>
           <Grid item xs={12} sm={4}>
-            <Typography variant="h6">Phone</Typography>
-            <Typography variant="body1">
-              <a href="tel:06-18402583" className="address">
-                06-18402583
-              </a>
-            </Typography>
             <Typography variant="h6">kvk-nummer</Typography>
-            <Typography variant="body1">94782326</Typography>
+            <Typography variant="body1">{kvk}</Typography>
           </Grid>
         </Grid>
       </Container>

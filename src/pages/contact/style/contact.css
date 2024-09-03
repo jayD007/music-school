@@ -1,30 +1,23 @@
-/* ContactForm.css */
-.custom-text-field .MuiOutlinedInput-root {
-    &.Mui-focused .MuiOutlinedInput-notchedOutline {
-        border-color: #B0960A;
-    }
-
-    &:hover .MuiOutlinedInput-notchedOutline {
-        border-color: #B0960A;
-    }
-
-    .MuiOutlinedInput-notchedOutline {
-        border-color: #d3c970;
-    }
-
-    .MuiInputBase-input {
-        color: darkgrey; /* Default text color */
-    }
-
-    &.Mui-focused .MuiInputBase-input {
-        color: white; /* Text color on focus */
-    }
+.MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+     border-color: #B0960A /* Default border color */
 }
 
-.custom-text-field .MuiInputLabel-root {
-    color: lightgrey; /* Default label color */
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #d3c970; /* Border color on focus */
 }
 
-.custom-text-field .Mui-focused .MuiInputLabel-root {
+.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: #B0960A /* Border color on hover */
+}
+
+.MuiInputLabel-root {
+    color: darkgrey; /* Default label color */
+}
+
+.MuiInputLabel-root.Mui-focused {
     color: darkgrey; /* Label color on focus */
+}
+
+.MuiInputBase-input {
+    color: darkgrey; /* Change this to your desired color */
 }

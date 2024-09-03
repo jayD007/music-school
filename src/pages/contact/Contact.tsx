@@ -1,112 +1,181 @@
 import React, { useState } from 'react';
 import {
+  Box,
   Button,
   Container,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
-  Grid,
+  Modal,
   TextField,
+  Typography,
 } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
 import Header from '../../components/header/Header';
 import './style/contact.css';
-import { FormData } from '../../types';
+import { email, emailSubject } from '../../utils';
+
+interface FormData {
+  voornaam: string;
+  achternaam: string;
+  leeftijd: number | '';
+  email: string;
+  telefoon: string;
+  vraag: string;
+}
 
 const Contact = () => {
   const [formData, setFormData] = useState<FormData>({
-    firstName: '',
-    lastName: '',
-    question: '',
-    age: '',
+    voornaam: '',
+    achternaam: '',
+    leeftijd: '',
     email: '',
-    phone: '',
+    telefoon: '',
+    vraag: '',
   });
 
+  const [errors, setErrors] = useState<Partial<FormData>>({});
+  const [modalOpen, setModalOpen] = useState(false);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name as keyof FormData]: value });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const [open, setOpen] = useState(false);
-  const navigate = useNavigate();
+  const validate = () => {
+    let errorMessages: { [key: string]: string } = {};
+
+    if (!formData.voornaam) errorMessages.voornaam = 'Voornaam is verplicht';
+    if (!formData.achternaam)
+      errorMessages.achternaam = 'Achternaam is verplicht';
+    if (!formData.leeftijd || formData.leeftijd < 3 || formData.leeftijd > 100)
+      errorMessages.leeftijd =
+        'Leeftijd is verplicht en moet tussen 3 jaar en 100 jaar zijn';
+    if (!formData.email) errorMessages.email = 'Email is verplicht';
+    if (!formData.telefoon)
+      errorMessages.telefoon = 'Telefoon nummer is verplicht';
+    if (!formData.vraag) errorMessages.vraag = 'Vraag is verplicht';
+
+    setErrors(errorMessages);
+    return Object.keys(errorMessages).length === 0;
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (parseInt(formData.age) > 120) {
-      alert('Please enter an appropriate age.');
-      return;
+    if (validate()) {
+      const emailBody = `
+      Voornaam: ${formData.voornaam}
+      Achternaam: ${formData.achternaam}
+      Leeftijd: ${formData.leeftijd}
+      Email: ${formData.email}
+      Telefoon: ${formData.telefoon}
+      Vraag: ${formData.vraag}
+    `;
+      window.location.href = `mailto:${email}?subject=${emailSubject}: ${formData.voornaam}&body=${encodeURIComponent(emailBody)}`;
+      setModalOpen(true);
     }
-    window.location.href = `mailto:jayanta7.deb@gmail.com?subject=Contact Form Submission&body=${encodeURIComponent(
-      `First Name: ${formData.firstName}\nLast Name: ${formData.lastName}\nAge: ${formData.age}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nQuestion: ${formData.question}`,
-    )}`;
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-    navigate('/');
   };
 
   return (
     <Container maxWidth="sm" id="contact">
       <Header text="Contact" />
       <form onSubmit={handleSubmit}>
-        <Grid container spacing={2}>
-          {(
-            [
-              'firstName',
-              'middleName',
-              'lastName',
-              'age',
-              'email',
-              'phone',
-              'question',
-            ] as (keyof FormData)[]
-          ).map((field, index) => (
-            <Grid item xs={12} key={index}>
-              <TextField
-                fullWidth
-                label={field
-                  .replace(/([A-Z])/g, ' $1')
-                  .replace(/^./, (str) => str.toUpperCase())}
-                name={field}
-                type={
-                  field === 'age'
-                    ? 'number'
-                    : field === 'email'
-                      ? 'email'
-                      : 'text'
-                }
-                value={formData[field]}
-                onChange={handleChange}
-                multiline={field === 'question'}
-                rows={field === 'question' ? 4 : 1}
-                className="custom-text-field"
-              />
-            </Grid>
-          ))}
-          <Grid item xs={12}>
-            <Button type="submit" variant="contained" color="success" fullWidth>
-              Send
-            </Button>
-          </Grid>
-        </Grid>
+        <TextField
+          label="voornaam"
+          name="voornaam"
+          value={formData.voornaam}
+          onChange={handleChange}
+          error={!!errors.voornaam}
+          helperText={errors.voornaam}
+          fullWidth
+          margin="normal"
+        />
+        <TextField
+          label="achternaam"
+          name="achternaam"
+          value={formData.achternaam}
+          onChange={handleChange}
+          error={!!errors.achternaam}
+          helperText={errors.achternaam}
+          fullWidth
+          margin="normal"
+        />
+        <TextField
+          label="leeftijd"
+          name="leeftijd"
+          type="number"
+          value={formData.leeftijd}
+          onChange={handleChange}
+          error={!!errors.leeftijd}
+          helperText={errors.leeftijd}
+          fullWidth
+          margin="normal"
+          inputProps={{ inputMode: 'numeric', pattern: '\\d*' }}
+          onInput={(e) => {
+            const input = e.target as HTMLInputElement;
+            input.value = input.value.replace(/[^0-9]/g, '');
+          }}
+        />
+        <TextField
+          label="email"
+          name="email"
+          type="email"
+          value={formData.email}
+          onChange={handleChange}
+          error={!!errors.email}
+          helperText={errors.email}
+          fullWidth
+          margin="normal"
+        />
+        <TextField
+          label="telefoon"
+          name="telefoon"
+          value={formData.telefoon}
+          onChange={handleChange}
+          error={!!errors.telefoon}
+          helperText={errors.telefoon}
+          fullWidth
+          margin="normal"
+          inputProps={{ inputMode: 'numeric', pattern: '\\d*' }}
+          onInput={(e) => {
+            const input = e.target as HTMLInputElement;
+            input.value = input.value.replace(/[^0-9]/g, '');
+          }}
+        />
+        <TextField
+          label="vraag"
+          name="vraag"
+          value={formData.vraag}
+          onChange={handleChange}
+          error={!!errors.vraag}
+          helperText={errors.vraag}
+          fullWidth
+          margin="normal"
+          multiline={true}
+          rows={4}
+        />
+        <Button type="submit" variant="contained" color="primary">
+          Stuur
+        </Button>
       </form>
-      <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Thank You</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            It has opened the mail for you. Thanks for contacting us.
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color="primary">
-            OK
-          </Button>
-        </DialogActions>
-      </Dialog>
+      <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
+        <Box
+          sx={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: 400,
+            bgcolor: 'background.paper',
+            boxShadow: 24,
+            p: 4,
+          }}
+        >
+          <Typography variant="h6" component="h2">
+            Thank you
+          </Typography>
+          <Typography sx={{ mt: 2 }}>
+            De e-mailapplicatie moet op uw apparaat zijn geopend. Als dit niet
+            het geval is, stuur dan uw e-mail naar dit adres
+            {email}
+          </Typography>
+        </Box>
+      </Modal>
     </Container>
   );
 };
