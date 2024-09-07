@@ -13,7 +13,7 @@ import Header from '../../components/header/Header';
 import { AccordionSlots } from '@mui/material/Accordion';
 
 const Lessons = () => {
-  const [expanded, setExpanded] = useState<number | false>(false);
+  const [expanded, setExpanded] = useState<number | false>(0);
 
   const handleExpansion =
     (index: number) => (event: React.SyntheticEvent, isExpanded: boolean) => {
@@ -45,16 +45,17 @@ const Lessons = () => {
           }}
         >
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+            expandIcon={<ExpandMoreIcon sx={{ color: '#B0960A' }} />}
             aria-controls={`panel${index}-content`}
             id={`panel${index}-header`}
           >
-            <Typography>{l.lesson}</Typography>
+            {expanded !== index && <Typography>{l.lesson}</Typography>}
           </AccordionSummary>
           <AccordionDetails>
             <Typography
               component="div"
               dangerouslySetInnerHTML={{ __html: l.description }}
+              sx={{ marginTop: '-50px' }}
             />
           </AccordionDetails>
         </Accordion>

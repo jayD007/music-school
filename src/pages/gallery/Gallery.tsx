@@ -9,6 +9,7 @@ import Button from '@mui/material/Button';
 import CloseIcon from '@mui/icons-material/Close';
 import { itemData } from './photoData';
 import Header from '../../components/header/Header';
+import Loading from '../../components/skeleton/Loading';
 
 function srcset(
   image: string,
@@ -27,6 +28,9 @@ function srcset(
 
 const Gallery = () => {
   const [selectedIndex, setSelectedIndex] = React.useState<number | null>(null);
+  const [loading, setLoading] = React.useState<boolean[]>(
+    Array(itemData.length).fill(true),
+  );
   const touchStartX = React.useRef<number | null>(null);
 
   const handleOpen = (index: number) => {
@@ -65,6 +69,14 @@ const Gallery = () => {
     touchStartX.current = null;
   };
 
+  const handleImageLoad = (index: number) => {
+    setLoading((prevLoading) => {
+      const newLoading = [...prevLoading];
+      newLoading[index] = false;
+      return newLoading;
+    });
+  };
+
   return (
     <>
       <Header text="Gallery" />
@@ -88,10 +100,13 @@ const Gallery = () => {
               rows={rows}
               onClick={() => handleOpen(index)}
             >
+              {loading[index] && <Loading />}
               <img
                 {...srcset(item.img, 250, 200, rows, cols)}
                 alt={item.alt}
                 loading="lazy"
+                onLoad={() => handleImageLoad(index)}
+                style={{ display: loading[index] ? 'none' : 'block' }}
               />
               <ImageListItemBar
                 sx={{
