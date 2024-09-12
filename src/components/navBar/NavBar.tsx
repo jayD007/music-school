@@ -13,6 +13,7 @@ import { useNavigate } from 'react-router-dom';
 import { pages } from './constants/pages';
 import { Button, ListItemIcon, ListItemText, MenuList } from '@mui/material';
 import logo from '../../assest/icons/muziekschool_heesch_logo.png';
+import { routes } from '../../routes';
 
 export const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -40,6 +41,10 @@ export const NavBar = () => {
     setAnchorElNav(null);
   };
 
+  const handleLogoClick = () => {
+    navigate(routes.home);
+  };
+
   return (
     <AppBar
       position="static"
@@ -56,7 +61,8 @@ export const NavBar = () => {
           <img
             src={logo}
             alt="Muziekschool Heesch"
-            style={{ width: '12rem' }}
+            style={{ width: '12rem', cursor: 'pointer' }}
+            onClick={handleLogoClick}
           />
 
           <Box

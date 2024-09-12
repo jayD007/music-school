@@ -13,6 +13,7 @@ import './style/contact.css';
 import { email, emailSubject } from '../../utils';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import SendIcon from '@mui/icons-material/Send';
 
 interface FormData {
   voornaam: string;
@@ -171,7 +172,12 @@ const Contact = () => {
           multiline={true}
           rows={4}
         />
-        <Button type="submit" variant="contained" color="primary">
+        <Button
+          type="submit"
+          variant="contained"
+          color="success"
+          startIcon={<SendIcon />}
+        >
           Stuur
         </Button>
       </form>

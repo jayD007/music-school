@@ -54,6 +54,8 @@ const Lessons = () => {
           <AccordionDetails>
             <Typography
               component="div"
+              className="text-main"
+              variant={'subtitle1'}
               dangerouslySetInnerHTML={{ __html: l.description }}
               sx={{ marginTop: '-50px' }}
             />

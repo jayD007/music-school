@@ -10,19 +10,33 @@ import EmailTwoToneIcon from '@mui/icons-material/EmailTwoTone';
 import FmdGoodTwoToneIcon from '@mui/icons-material/FmdGoodTwoTone';
 import AssignmentTwoToneIcon from '@mui/icons-material/AssignmentTwoTone';
 import { Stack } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import { routes } from '../../routes';
 
 export const Footer = () => {
+  const navigate = useNavigate();
+
+  const handleLogoClick = () => {
+    navigate(routes.home);
+  };
+
   return (
     <>
       <footer className="footer">
         <Container>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={4}>
-              <img src={logo} alt="Music school heesche" width="200px" />
+              <img
+                src={logo}
+                alt="Music school heesche"
+                width="200px"
+                style={{ cursor: 'pointer' }}
+                onClick={handleLogoClick}
+              />
             </Grid>
             <Grid item xs={12} sm={4}>
               <Stack direction="row" spacing={1} sx={{ marginBottom: '20px' }}>
-                <EmailTwoToneIcon />
+                <EmailTwoToneIcon color="error" />
                 <Typography variant="body1">
                   <a href={`mailto:${email}`} className="address">
                     {email}
@@ -31,7 +45,7 @@ export const Footer = () => {
               </Stack>
 
               <Stack direction="row" spacing={1}>
-                <PhoneAndroidTwoToneIcon />
+                <PhoneAndroidTwoToneIcon color="error" />
                 <Typography variant="body1">
                   <a href={`tel:${phone}`} className="address">
                     {phone}
@@ -39,7 +53,7 @@ export const Footer = () => {
                 </Typography>
               </Stack>
               <Stack direction="row" spacing={1} sx={{ marginTop: '20px' }}>
-                <FmdGoodTwoToneIcon />
+                <FmdGoodTwoToneIcon color="error" />
                 <Typography variant="body1">
                   <a
                     href="https://maps.app.goo.gl/rS2UYk4n9s9Pk4P28"
@@ -56,7 +70,7 @@ export const Footer = () => {
             <Grid item xs={12} sm={4}>
               <Typography variant="h6">kvk-nummer</Typography>
               <Stack direction="row" spacing={1}>
-                <AssignmentTwoToneIcon />
+                <AssignmentTwoToneIcon color="error" />
                 <Typography variant="body1">{kvk}</Typography>
               </Stack>
             </Grid>
