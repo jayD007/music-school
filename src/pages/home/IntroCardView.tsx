@@ -19,7 +19,7 @@ export const IntroCardView = () => {
         alt="Frank"
       />
       <CardContent>
-        <Typography className="card-content">{textMain}</Typography>
+        <Typography className="card-content text-main">{textMain}</Typography>
       </CardContent>
     </Card>
   );

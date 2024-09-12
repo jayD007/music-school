@@ -1,8 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+@media (min-width: 768px) {
+    .header {
+        font-size: 2rem;
+    }
+
+    .text-main {
+        font-size: 1rem !important;
+
+    }
+}
+
+@media (min-width: 992px) {
+    .header {
+        font-size: 2.5rem;
+    }
+
+    .text-main {
+        font-size: 1.25rem !important;
+
+    }
+}
+
+@media (min-width: 1200px) {
+    .header {
+        font-size: 3rem;
+    }
+
+    .text-main {
+        font-size: 1.25rem !important;
+    }
+}
+
+@media (max-width: 430px) {
+    .header {
+        font-size: 3rem;
+    }
+
+    .text-main {
+        font-size: 1rem !important;
+
+    }
+}
+
+
+
 body {
     background: black;
+    font-family: "EB Garamond", "Open Sans", system-ui, sans-serif !important;
 }
 
 .border {
     border-radius: 45px !important;
     border: 1px solid #B0960A !important;
 }
+
+.header {
+    font-size: 2.95rem;
+    color: #5d080f;
+    text-align: center;
+    font-weight: 400;
+}
+
+.text-main {
+    font-size: 1.05rem;
+    color: darkgrey;
+    text-align: justify-all;
+    font-weight: 100;
+}
+

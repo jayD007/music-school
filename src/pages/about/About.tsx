@@ -12,12 +12,15 @@ const About = () => {
     <>
       <div className="introduction" id="about">
         <h1 className="header">{introductionLessonHeader}</h1>
-        <ul>
+        <ul className="text-main">
           {introLessonQuestions.map((question, index) => (
             <li key={index}>{question.question}</li>
           ))}
         </ul>
-        <div dangerouslySetInnerHTML={{ __html: introductionLessonDetails }} />
+        <div
+          className="text-main"
+          dangerouslySetInnerHTML={{ __html: introductionLessonDetails }}
+        />
       </div>
     </>
   ) : (

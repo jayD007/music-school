@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+    background: black;
+    font-family: "EB Garamond", "Open Sans", system-ui, sans-serif !important;
+}
+
+.border {
+    border-radius: 45px !important;
+    border: 1px solid #B0960A !important;
+}
