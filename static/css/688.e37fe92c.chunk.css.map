@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/688.e37fe92c.chunk.css","mappings":"AACA,MACI,0BACJ,CAEA,cAEI,aAAe,CACf,gBACJ","sources":["pages/home/home.css"],"sourcesContent":["\n.card {\n    background: transparent !important;\n}\n\n.card-content {\n    \n    color: darkgrey;\n    font-size: .85rem;\n}"],"names":[],"sourceRoot":""}
