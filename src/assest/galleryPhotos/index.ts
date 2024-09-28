@@ -1,18 +1,17 @@
+import solo from './solo.jpg';
+import piano_les from './piano_les.jpg';
+import accordion1 from './accordion1.jpg';
+import accordion2 from './accordion2.jpg';
+import finalGroupPerformance from './finalGroupPerformance.jpg';
+import finalPerformance from './finalPerformance.jpg';
+import groupPerformance from './groupPerformance.jpg';
 import { GalleryItem } from '../../types';
-import solo from '../../assest/galleryPhotos/solo.jpg';
-import piano_les from '../../assest/galleryPhotos/piano_les.jpg';
-import accordion1 from '../../assest/galleryPhotos/accordion1.jpg';
-import accordion2 from '../../assest/galleryPhotos/accordion2.jpg';
-import finalGroupPerformance from '../../assest/galleryPhotos/finalGroupPerformance.jpg';
-import finalPerformance from '../../assest/galleryPhotos/finalPerformance.jpg';
-
-import groupPerformance from '../../assest/galleryPhotos/groupPerformance.jpg';
 
 const altTag = (alt: string) => {
   return 'muzik-school-heesch-frank' + alt;
 };
 
-export const itemData: GalleryItem = [
+export const galleryPhotos: GalleryItem = [
   {
     img: solo,
     alt: altTag('solo'),

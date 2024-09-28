@@ -7,7 +7,7 @@ import {
 import './style/about.css';
 import Loading from '../../components/skeleton/Loading';
 
-const About = () => {
+const Tarief = () => {
   return introLessonQuestions.length > 0 ? (
     <>
       <div className="introduction" id="about">
@@ -28,4 +28,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Tarief;

@@ -7,9 +7,9 @@ import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import CloseIcon from '@mui/icons-material/Close';
-import { itemData } from './photoData';
 import Header from '../../components/header/Header';
-import Loading from '../../components/skeleton/Loading';
+
+import { galleryPhotos } from '../../assest';
 
 function srcset(
   image: string,
@@ -28,9 +28,7 @@ function srcset(
 
 const Gallery = () => {
   const [selectedIndex, setSelectedIndex] = React.useState<number | null>(null);
-  const [loading, setLoading] = React.useState<boolean[]>(
-    Array(itemData.length).fill(true),
-  );
+
   const touchStartX = React.useRef<number | null>(null);
 
   const handleOpen = (index: number) => {
@@ -43,13 +41,15 @@ const Gallery = () => {
 
   const handleNext = () => {
     if (selectedIndex !== null) {
-      setSelectedIndex((selectedIndex + 1) % itemData.length);
+      setSelectedIndex((selectedIndex + 1) % galleryPhotos.length);
     }
   };
 
   const handlePrev = () => {
     if (selectedIndex !== null) {
-      setSelectedIndex((selectedIndex - 1 + itemData.length) % itemData.length);
+      setSelectedIndex(
+        (selectedIndex - 1 + galleryPhotos.length) % galleryPhotos.length,
+      );
     }
   };
 
@@ -69,14 +69,6 @@ const Gallery = () => {
     touchStartX.current = null;
   };
 
-  const handleImageLoad = (index: number) => {
-    setLoading((prevLoading) => {
-      const newLoading = [...prevLoading];
-      newLoading[index] = false;
-      return newLoading;
-    });
-  };
-
   return (
     <>
       <Header text="Gallery" />
@@ -89,7 +81,7 @@ const Gallery = () => {
         gap={1}
         id="gallery"
       >
-        {itemData.map((item, index) => {
+        {galleryPhotos.map((item: any, index: number) => {
           const cols = item.featured ? 2 : 1;
           const rows = item.featured ? 2 : 1;
 
@@ -100,13 +92,10 @@ const Gallery = () => {
               rows={rows}
               onClick={() => handleOpen(index)}
             >
-              {loading[index] && <Loading />}
               <img
                 {...srcset(item.img, 250, 200, rows, cols)}
                 alt={item.alt}
                 loading="lazy"
-                onLoad={() => handleImageLoad(index)}
-                style={{ display: loading[index] ? 'none' : 'block' }}
               />
               <ImageListItemBar
                 sx={{
@@ -161,8 +150,8 @@ const Gallery = () => {
                 <CloseIcon />
               </IconButton>
               <img
-                src={itemData[selectedIndex].img}
-                alt={itemData[selectedIndex].title}
+                src={galleryPhotos[selectedIndex].img}
+                alt={galleryPhotos[selectedIndex].title}
                 style={{ width: '100%' }}
               />
               <Button
@@ -211,7 +200,7 @@ const Gallery = () => {
                   borderRadius: 1,
                 }}
               >
-                {selectedIndex + 1} / {itemData.length}
+                {selectedIndex + 1} / {galleryPhotos.length}
               </Box>
             </Box>
           )}

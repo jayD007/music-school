@@ -1,9 +1,9 @@
-const baseUrl = '/music-school/';
+const baseUrl = '/';
 
 export const routes = {
   home: baseUrl,
-  about: `${baseUrl}about`,
-  lessons: `${baseUrl}lessons`,
+  about: `${baseUrl}tarief`,
+  lessons: `${baseUrl}lessen`,
   contact: `${baseUrl}contact`,
   gallery: `${baseUrl}gallery`,
 };

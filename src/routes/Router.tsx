@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { routes } from './routes';
 
 const Home = lazy(() => import('../pages/home/Home'));
-const About = lazy(() => import('../pages/about/About'));
+const About = lazy(() => import('../pages/tarief/Tarief'));
 const Lessons = lazy(() => import('../pages/lessons/Lessons'));
 const Contact = lazy(() => import('../pages/contact/Contact'));
 const Gallery = lazy(() => import('../pages/gallery/Gallery'));
